@@ -1,1 +1,49 @@
-<p>home works!</p>
+<div class="banner">
+    <div class="content">
+        <h1 class = "mb-5">Quality means doing it right <br>when no one is looking.</h1>
+        <a routerLink = "menu">BOOK NOW<i class="bi bi-arrow-right"></i></a>        
+    </div>
+</div>
+
+<div class = "container mt-5 mb-5">
+    <h1 class="text-center">
+        How to Get Car on <span class="highlight">One Click</span>
+    </h1>
+    <div class="row mt-5">
+        <div class="col-lg-4 mt-2">
+            <div class="stepbox">
+                <h1>1.</h1>
+                <p>Select Car</p>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-2">
+            <div class="stepbox">
+                <h1>2.</h1>
+                <p>Fill the require details</p>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-2">
+            <div class="stepbox">
+                <h1>3.</h1>
+                <p>Now Wait For Dilivery</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- carBox -->
+<div class="container mt-4 mb-4">
+    <h1 class="text-center mt-3" >
+        Most Popular <span class="highlight">  CARS </span>
+    </h1>
+    <div class="row">
+        <div class="col-lg-3 mt-3" *ngFor="let cd of carData;index as i">
+            <div class="carBox" *ngIf="i<=3">
+                <img src="{{cd.img}}" alt="car" class="img-fluid">
+                <h1>{{cd.name}}</h1>
+                <p>{{cd.price}}</p>
+            </div>
+        </div>
+    </div>
+    <a routerLink="menu" class="viewMorebtn">View More<i class="bi bi-arrow-right"></i></a>
+</div>
