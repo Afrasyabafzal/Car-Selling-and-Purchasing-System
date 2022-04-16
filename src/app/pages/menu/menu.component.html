@@ -1,9 +1,17 @@
 <div class="container mt-5 mb-5">
+    
     <div class="row">
+        <!-- <div class="container">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">Search</button> </div>
+                </div>
+            </div>
+        </div> -->
         <div class="search">
-            <input type="text" [(ngModel)]="term" class="searchTerm" placeholder="What are you looking for?">
+            <i class="bi bi-search"></i><input type="text" [(ngModel)]="term" class="searchTerm form-control" placeholder="What are you looking for?">
           </div>
-        <div class="col-lg-4" *ngFor="let cd of carData">
+        <div class="col-lg-4" *ngFor="let cd of carData | filter:term">
             <div class="carBox mt-3 mb-3">
                <img src="{{cd.img}}" alt="">
                 <h3>{{cd.name}}</h3>
