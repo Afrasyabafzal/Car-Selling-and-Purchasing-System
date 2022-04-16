@@ -1,0 +1,23 @@
+.carBox{
+    padding: 10px 10px;
+}
+.carBox img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.carBox h1{
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.buybtn{
+    color: white;
+    background-color: var(--primary-color);
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer; 
+}
