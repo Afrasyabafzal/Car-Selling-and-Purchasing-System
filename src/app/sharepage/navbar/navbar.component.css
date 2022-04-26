@@ -6,3 +6,13 @@
 .navbar-light .navbar-nav .nav-link{
     color: var(--secondary-color); 
 }
+img
+{
+    width: 150px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+a{
+    margin-left: 20px;
+}

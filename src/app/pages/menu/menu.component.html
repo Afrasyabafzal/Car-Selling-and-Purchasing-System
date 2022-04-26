@@ -1,25 +1,35 @@
+<div class="d-flex flex-row col-md-5">
+        <select class="form-select mt-2 " aria-label="Disabled select example"
+        [(ngModel)]="selectedBrand" (change)="valueSelected()">
+            <option *ngFor="let cd of carData2 ">{{ cd.name }}</option>
+        </select>   
+        <select class="form-select mt-2 ms-2" 
+        [(ngModel)]="selectedBrand" (change)="valueSelectedCat()">
+            <option *ngFor="let cd of category">{{ cd.name }}</option>
+        </select>
+        <select class="form-select mt-2 ms-2" 
+        [(ngModel)]="selectedBrand" (change)="valueSelectedCity()">
+            <option *ngFor="let cd of Cities">{{cd}}</option>
+        </select>
+        <select class="form-select mt-2 ms-2" 
+        [(ngModel)]="selectedBrand" (change)="valueSelectedPrice()">
+            <option *ngFor="let cd of prices">0 to {{cd}}</option>
+        </select>
+</div>
 <div class="container mt-5 mb-5">
-    
     <div class="row">
-        <!-- <div class="container">
-            <div class="row height d-flex justify-content-center align-items-center">
-                <div class="col-md-8">
-                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">Search</button> </div>
+            <div class="col-lg-4" *ngFor="let cd of carData | filter:selectedBrand">
+                <div class="carBox mt-3 mb-3">
+                <img src="{{cd.img}}" alt="">
+                    <h3>{{cd.name}}</h3>
+                    <p>{{cd.price}}</p>
+                    <p>{{cd.location}}</p>
+                    <p>{{cd.date_added}}</p>
+                    <p>{{cd.rating}}</p>
+                    <br/>
+                    <a class="buybtn" [routerLink]="['/menu',cd.id]">Buy Now &nbsp;<i class="bi bi-bag"></i></a>
                 </div>
             </div>
-        </div> -->
-        <div class="search">
-            <i class="bi bi-search"></i><input type="text" [(ngModel)]="term" class="searchTerm form-control" placeholder="What are you looking for?">
-          </div>
-        <div class="col-lg-4" *ngFor="let cd of carData | filter:term">
-            <div class="carBox mt-3 mb-3">
-               <img src="{{cd.img}}" alt="">
-                <h3>{{cd.name}}</h3>
-                <p>{{cd.details}}</p>
-                <p>{{cd.price}}</p>
-                <br/>
-                <a class="buybtn" [routerLink]="['/menu',cd.id]">Buy Now &nbsp;<i class="bi bi-bag"></i></a>
-            </div>
-        </div>
+        
     </div>
 </div>
