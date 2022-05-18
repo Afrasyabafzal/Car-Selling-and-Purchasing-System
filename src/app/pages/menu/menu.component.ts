@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
+import {ApiService } from '../../services/api.service';
 interface Car {
   id: number;
   name: string;
@@ -16,9 +17,13 @@ export class MenuComponent implements OnInit {
   searchTerm!: string;
   term!: string;
 
-  constructor(private service:OrderDetailsService) { }
+  constructor(private service:OrderDetailsService,
+    private apiService: ApiService) {
+      this.readCar();
+     }
   carData:any;
   carData2:any;
+  carDetails: any=[];
   category:any;
   Cities :any;
   prices : any;
@@ -28,6 +33,15 @@ export class MenuComponent implements OnInit {
     this.category = this.service.category;
     this.Cities = this.service.city;
     this.prices = this.service.price;
+  }
+  readCar(){
+    this.apiService.getCars().subscribe(data => {
+      console.log(data);
+      //coverting the data into array
+      this.carDetails = data;
+      console.log(this.carDetails.data[0].name);
+    });
+
   }
   public selectedBrand: any;
   public valueSelected() {

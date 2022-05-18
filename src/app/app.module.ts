@@ -11,8 +11,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MenupageComponent } from './pages/menupage/menupage.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCarComponent } from './pages/add-car/add-car.component';
 
 
 @NgModule({
@@ -24,13 +26,15 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     AboutComponent,
     ContactComponent,
-    MenupageComponent
+    MenupageComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng2SearchPipeModule
 
   ],

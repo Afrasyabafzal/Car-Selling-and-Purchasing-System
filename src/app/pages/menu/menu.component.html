@@ -18,7 +18,7 @@
 </div>
 <div class="container mt-5 mb-5">
     <div class="row">
-            <div class="col-lg-4" *ngFor="let cd of carData | filter:selectedBrand">
+            <div class="col-lg-4" *ngFor="let cd of carDetails.data | filter:selectedBrand; let i=index">
                 <div class="carBox mt-3 mb-3">
                 <img src="{{cd.img}}" alt="">
                     <h3>{{cd.name}}</h3>

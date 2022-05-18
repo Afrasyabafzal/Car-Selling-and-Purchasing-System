@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+
+        
+        <div class="card-body">
+            <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="car-id">Car ID</label>
+                    <input type="number" class="form-control" id="car-id" formControlName="id"
+                            placeholder="Enter car ID">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['id'].errors?.['required']">
+                        Car id is required
+                    </div>
+                </div>  
+
+                <div class="form-group">
+                    <label for="car-name">Car Name</label>
+                    <input type="text" class="form-control" id="car-name" formControlName="name"
+                            placeholder="Enter car name">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['name'].errors?.['required']">
+                        Car name is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-price">Car Price</label>
+                    <input type="number" class="form-control" id="car-price" formControlName="price"
+                            placeholder="Enter car price">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['price'].errors?.['required']">
+                        Car price is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-location">Location</label>
+                    <input type="text" class="form-control" id="car-location" formControlName="location"
+                            placeholder="Enter Location">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['location'].errors?.['required']">
+                        Car Loction is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-category">Car category</label>
+                    <input type="text" class="form-control" id="car-category" formControlName="category"
+                            placeholder="Enter Motor Category">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['category'].errors?.['required']">
+                        Car category is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-date_added">Add Date</label>
+                    <input type="date" class="form-control" id="car-date_added" formControlName="date_added"
+                            placeholder="Enter Motor Category">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['date_added'].errors?.['required']">
+                        Car category is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-rating">Car rating</label>
+                    <input type="number" class="form-control" id="car-rating" formControlName="rating"
+                            placeholder="Enter Motor rating">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['rating'].errors?.['required']">
+                        Car rating is required
+                    </div>
+                </div>
+
+                <!-- image -->
+                <div class="form-group">
+                    <label for="car-image">Car image</label>
+                    <input type="file" class="form-control" id="car-image" formControlName="img"
+                            placeholder="Upload Picture" (change)="onFileChange($event)">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm['img'].errors?.['required']">
+                        Car image is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
+                      Add Details
+                    </button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
