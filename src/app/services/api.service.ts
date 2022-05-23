@@ -12,7 +12,7 @@ import {
 })
 
 export class ApiService {
-    baseUrl = 'http://localhost:3000/api/';
+    baseUrl = 'http://localhost:3000/api';
     headers = new HttpHeaders().set('Content-Type','application/json');
     constructor(private http: HttpClient) { }
 
@@ -27,6 +27,7 @@ export class ApiService {
     }
     //get car by id
     getCarById(id: any): Observable<any> {
+        console.log(id)
         return this.http.get(`${this.baseUrl}/${id}`).pipe(catchError(this.errorMgmt));
     }
     //update car
@@ -36,6 +37,7 @@ export class ApiService {
     }
     //delete car
     deleteCar(id: any): Observable<any> {
+        console.log(id);
         const url = `${this.baseUrl}/delete/${id}`;
         return this.http.delete(url, { headers: this.headers }).pipe(catchError(this.errorMgmt));
     }

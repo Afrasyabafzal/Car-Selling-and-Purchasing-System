@@ -3,7 +3,7 @@
 
         
         <div class="card-body">
-            <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="car-id">Car ID</label>
                     <input type="number" class="form-control" id="car-id" formControlName="id"
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-success btn-lg btn-block mt-4" type="submit">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
                       Add Details
                     </button>
                   </div>

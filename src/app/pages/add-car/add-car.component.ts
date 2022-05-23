@@ -66,23 +66,4 @@ export class AddCarComponent implements OnInit {
     }
   }
 
-  onFileChange(event: any) {
-    console.log(event);
-    const reader = new FileReader();
-    if (event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-      console.log(reader);
-      reader.onload = () => {
-        this.imgUrl = reader.result as string;
-        console.log(this.imgUrl);
-        this.addCarForm.patchValue({
-          img: reader.result
-        });
-        console.log(this.addCarForm.value);
-      }
-    }
-  }
-
-
 }

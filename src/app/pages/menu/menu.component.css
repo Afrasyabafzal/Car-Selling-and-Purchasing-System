@@ -32,3 +32,22 @@ select{
     padding: 10px;
     border-radius: 5px;
 }
+
+.navbar-light .navbar-nav .nav-link.active-link{
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: var(--secondary-color); 
+}
+img
+{
+    width: 150px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+a{
+    margin-left: 20px;
+}

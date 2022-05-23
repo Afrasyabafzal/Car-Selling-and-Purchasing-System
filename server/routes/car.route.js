@@ -37,8 +37,7 @@ carRoute.route('/:id').get((req, res, next) => {
             return next(err);
         } else {
             res.json({
-                success: true,
-                msg: data
+                data
             });
         }
     });

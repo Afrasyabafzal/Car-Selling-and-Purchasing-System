@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './pages/add-car/add-car.component';
+import { EditCarComponent } from './pages/edit-car/edit-car.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AddCarComponent } from './pages/add-car/add-car.component';
     AboutComponent,
     ContactComponent,
     MenupageComponent,
-    AddCarComponent
+    AddCarComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,

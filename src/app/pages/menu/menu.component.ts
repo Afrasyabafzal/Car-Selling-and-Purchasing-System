@@ -64,4 +64,12 @@ export class MenuComponent implements OnInit {
       item => (item.price <= this.selectedBrand)
     );
   }
+  public removeCar(car: any, index: any) {
+    console.log(car);
+    if(window.confirm('Are you sure you want to delete this car?')) {
+      this.apiService.deleteCar(car._id).subscribe(data => {
+        this.carDetails.splice(index, 1);
+      });
+    }
+  }
 }

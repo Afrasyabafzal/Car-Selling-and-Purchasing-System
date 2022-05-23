@@ -9,6 +9,7 @@
         </select>
         <select class="form-select mt-2 ms-2" 
         [(ngModel)]="selectedBrand" (change)="valueSelectedCity()">
+            <option value="" disabled selected hidden>Choose yout frame</option>
             <option *ngFor="let cd of Cities">{{cd}}</option>
         </select>
         <select class="form-select mt-2 ms-2" 
@@ -22,12 +23,20 @@
                 <div class="carBox mt-3 mb-3">
                 <img src="{{cd.img}}" alt="">
                     <h3>{{cd.name}}</h3>
-                    <p>{{cd.price}}</p>
+                    <p>$ {{cd.price}}</p>
                     <p>{{cd.location}}</p>
                     <p>{{cd.date_added}}</p>
                     <p>{{cd.rating}}</p>
                     <br/>
                     <a class="buybtn" [routerLink]="['/menu',cd.id]">Buy Now &nbsp;<i class="bi bi-bag"></i></a>
+                    <td class="text-center edit-block">
+                        <span class="edit" [routerLink]="['/edit-car/', cd._id]">
+                          <button type="button" class="btn btn-success btn-sm mt-4 mx-sm-1">Edit</button>
+                        </span>
+                        <span class="delete" (click)="removeCar(cd, i)">
+                          <button type="button" class="btn btn-danger btn-sm mt-4 mx-sm-1">Delete</button>
+                        </span>
+                      </td>
                 </div>
             </div>
         
